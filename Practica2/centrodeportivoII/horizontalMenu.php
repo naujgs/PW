@@ -1,4 +1,5 @@
 <article id="horizontalMenu">
+  <!-- code included -->
         <ul>
   <li><a href="./actividades.php">Actividades</a></li>
             <li><a href="./horario.php">Horario</a></li>
