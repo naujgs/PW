@@ -21,18 +21,7 @@
             </article>
         </header>
 
-		<article id="horizontalMenu">
-        	<ul>
-                <li><a href="./actividades.php">Actividades</a></li>
-                <li><a href="./horario.php">Horario</a></li>
-                <li><a href="./tecnicos.php">Tecnicos</a></li>
-                <li><a href="#">Instalaciones y Servicios</a></li>
-                <li><a href="./localizacion.php">Localización</a></li>
-                <li><a href="#">Precios</a></li>
-                <li><a href="./altausuario.php">Alta de usuarios</a></li>
-                <li><a href="./foro.php">Foro</a></li>
-         	</ul>
-        </article>
+		<?php include("../horizontalMenu.php"); ?>
 
         <section id="main">
             <table id="schedule">
@@ -49,10 +38,7 @@
                     </tbody>
             </table>
         </section>
-        <footer>
-			<a href="mailto:juangonzalezserrano@correo.ugr.es">Contacto</a><a> || </a>
-            <a href="../como_se_hizo.pdf" target="_blank">¿Cómo se hizo?</a>
-        </footer>
+        <?php include("../foot.php"); ?>
 	</section>
 
 
