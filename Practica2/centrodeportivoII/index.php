@@ -1,3 +1,11 @@
+<?php
+  include("files/my_functions.php");
+  include("files/datos_conexion.php");
+
+  session_start();
+
+ ?>
+
 <!doctype html>
 
 <!-- comentario -->
