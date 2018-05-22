@@ -24,7 +24,7 @@
                     	<tbody>
                         	<tr>
                             	<td>
-                                	<label for="username">Nombre:</label>
+                                	<label for="dni">DNI:</label>
                                 </td>
                                 <td>
                                 	<label for="password">Contraseña:</label>
@@ -32,7 +32,7 @@
                         	</tr>
                             <tr>
                             	<td>
-                                	<input id="username" name="username" type="text"/>
+                                	<input id="dni" name="dni" type="text"/>
                                 </td>
                                 <td>
                                 	<input id="password" name="password" type="password"/>
