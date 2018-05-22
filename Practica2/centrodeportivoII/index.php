@@ -1,7 +1,7 @@
 <?php
   include("files/my_functions.php");
   include("files/datos_conexion.php");
-
+/*	iniciamos sesion en php y utilizamos la informacion almacenada en la cookie que creamos en "comprobar_aceso.php"	*/
   session_start();
 
  ?>
