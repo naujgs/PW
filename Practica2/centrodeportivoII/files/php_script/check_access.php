@@ -18,6 +18,7 @@
 			if($usuario = searchUser($dni, $clave)){
 
 				while($valor = mysqli_fetch_array($usuario)){ //mysqli_fetch_array -> guarda en un array la informacion de $usuario
+          /*  "Asigno" valores a la sesion. Luego sera habierta con <session_start()>*/
 					$_SESSION['nombre'] = $valor['nombre'];
 					$_SESSION['rol'] = $valor['rol'];
 					$_SESSION['dni'] = $valor['dni'];
