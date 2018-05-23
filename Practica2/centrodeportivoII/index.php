@@ -2,13 +2,13 @@
   include("./php_script/my_functions.php");
   include("./php_script/datos_conexion.php");
 /*	iniciamos sesion en php y utilizamos la informacion almacenada en la cookie que creamos en "comprobar_aceso.php"	*/
-//  session_start();
+  //session_start();
 
  ?>
 
 <!doctype html>
 
-<!-- comentario -->
+<!-- comentariako -->
 
 <html>
 <head>
@@ -39,7 +39,14 @@
                     <li><a href="./tecnicos.php">Tecnicos</a></li>
                     <li><a href="./localizacion.php">Localización</a></li>
                     <li><a href="./altausuario.php">Alta de usuarios</a></li>
-                    <li><img src="imagenes/locked.png"><a href="./foro.php">Foro</a></li>
+                    <li>
+                      <?php if( empty($_SESSION) ){ ?>
+                        <img src="./imagenes/locked.png">
+                      <?php }else{ ?>
+                        <img src="./imagenes/unlocked.png">
+                      <?php }//fin else ?>
+                      <a href="./foro.php">Foro</a>
+                    </li>
             	</ul>
             </article>
         </section>
