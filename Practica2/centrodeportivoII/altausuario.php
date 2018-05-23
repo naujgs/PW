@@ -65,9 +65,6 @@
                 <option value="2">2 meses</option>
                 <option value="3">3 meses</option>
             </select><br>
-			<label>¿Has estado inscrito en el gimnasio antes?</label>
-            <input name="time" type="radio" value="yes">Si
-            <input name="time" type="radio" value="no">No<br>
             <label for="know">¿Cómo nos has conocido?</label>
             <input list="know">
             <datalist id="know">
