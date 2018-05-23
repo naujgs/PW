@@ -24,6 +24,8 @@
     <meta charset="utf-8">
     <title>Edita tu informacion de usuario usuario | Centro Deportivo MusclePlus</title>
 	<link rel="stylesheet" type="text/css" href="./estilos.css"    />
+			<!-- CARGAMOS FUNCIONES JAVASCRIPT -->
+	<script type="text/javascript" src="./js/dinamic_functions.js"></script>
 	<meta name="viewport" content="width=device-width">
 
 	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"> <!--Fuente de google-->
