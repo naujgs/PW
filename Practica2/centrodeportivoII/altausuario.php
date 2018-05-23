@@ -10,12 +10,7 @@
 </head>
 <body>
 	<header>
-		<article id="imagen"><img src="./imagenes/ejercer.png" title="Icono diseñado por Freepik desde www.flaticon.com con licencia CC 3.0 BY"></article>
-		<h1 id="tituloWeb">Centro Deportivo MusclePlus</h1>
-		<article id="login">
-			<p>Bienvenido Mr. User</p>
-            <a href="./index.php">Log Out</a>
-		</article>
+    <?php include("./cabecera.php") ?>
 	</header>
 	<?php include("./horizontalMenu.php"); ?>
 
