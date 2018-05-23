@@ -24,6 +24,10 @@
 					$_SESSION['dni'] = $valor['dni'];
 				}
 
+				//Si el logueo esta correcto, nos mandara al interior del sistema.
+				?>
+				<script type="text/javascript">location.href="../index2.php";</script>
+				<?php
 			}else{
 				//si el usuario no existe, mostramos un error y redireccionamos
 				?>
