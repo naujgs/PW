@@ -12,10 +12,10 @@
   }
 
 	//Cuando se llama a esta pagina, se envia el dni del usuario que se desea modificar. Ahora recuperamos dicho dni
-	$dni = $_GET['dni'];
+	$dni = $_SESSION['dni'];
 
-	include("datos_conexion.php");
-	include("mis_funciones.php");
+	include("./php_script/datos_conexion.php");
+	include("./php_script/my_functions.php");
 ?>
 
 <!doctype html>
