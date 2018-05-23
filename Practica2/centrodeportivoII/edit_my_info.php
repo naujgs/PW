@@ -47,12 +47,20 @@
     	closeConexion($conex);
   	?>
     <p>Modifica los datos de <u><b><?php echo $usuario['nombre'];?></b></u><br/>Cada campo muestra el valor actual</p>
-    	<form action="./php_script/mod_my_info.php?dni=<?php echo $dni; ?>" method="post" onSubmit="return modifica_datos_registro();">
+    	<form action="./php_script/mod_my_info.php" method="post" onSubmit="return modifica_datos_registro();">
 			<fieldset>
                 <legend>Datos Personales</legend>
                 <article id="cople">
+                    <label for="dni">DNI</label>
+                    <input name="dni" type="text" value="<?php echo $usuario['dni']?>"><br>
+                </article>
+                <article id="cople">
                     <label for="name">Nombre y Apellidos:</label>
                     <input name="name" type="text" value="<?php echo $usuario['nombre']?>"><br>
+                </article>
+                <article id="cople">
+                    <label for="password">Contraseña:</label>
+                    <input name="password" type="password" value="<?php echo $usuario['password']?>"><br>
                 </article>
                 <article id="cople">
                     <label for="birth">Fecha de Nacimiento:</label>
@@ -82,6 +90,12 @@
                     <input name="telefono" type="tel" value="<?php echo $usuario['telefono']?>"><br>
                 </article>
 			</fieldset>
+      <label for="periodo">Periodo inicial de inscripción</label>
+      <select name="periodo">
+          <option value="1">1 mes</option>
+          <option value="2">2 meses</option>
+          <option value="3">3 meses</option>
+      </select><br>
 
             <article id="botons">
                 <input type="submit" value="Aceptar">
