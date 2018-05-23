@@ -8,5 +8,8 @@
           <li><a href="./localizacion.php">Localización</a></li>
           <li><a href="./altausuario.php">Alta de usuarios</a></li>
           <li><a href="./foro.php">Foro</a></li>
+          <?php if( !empty($_SESSION) ){ ?>
+            <li><a href="./edit_my_info.php">Modifica tu info</a></li>
+          <?php } ?>
       </ul>
     </article>
