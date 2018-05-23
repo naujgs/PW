@@ -13,7 +13,7 @@ $_SESSION['rol'];*/
     if( empty($_SESSION) ){
    ?>
   <article id="login">
-    <form action="./files/php_script/check_access.php" method="post">
+    <form action="./php_script/check_access.php" method="post">
       <table cellspacing="0">
         <tbody>
           <tr>
@@ -45,7 +45,7 @@ $_SESSION['rol'];*/
   <?php } else{//fin if( empty($_SESSION['nomre']) ) ?>
   <article id="login">
     <p>Bienvenido <?php echo $_SESSION['nombre'] ?></p>
-    <a href="./files/php_script/log_out.php">Log Out</a>
+    <a href="./php_script/log_out.php">Log Out</a>
   </article>
 <?php
   }//fin del else
