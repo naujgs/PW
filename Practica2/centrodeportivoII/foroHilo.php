@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Cómo respirar para la correcta realizacion de un ejercicio| Centro Deportivo MusclePlus</title>
-	<link rel="stylesheet" type="text/css" href="../estilos.css"    />
+	<link rel="stylesheet" type="text/css" href="./estilos.css"    />
 	<meta name="viewport" content="width=device-width">
 
 	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"> <!--Fuente de google-->
@@ -11,20 +11,20 @@
 
 <body>
     <header>
-        <article id="imagen"><img src="../imagenes/ejercer.png" title="Icono diseñado por Freepik desde www.flaticon.com con licencia CC 3.0 BY"></article>
+        <article id="imagen"><img src="./imagenes/ejercer.png" title="Icono diseñado por Freepik desde www.flaticon.com con licencia CC 3.0 BY"></article>
 		<h1 id="tituloWeb">Centro Deportivo MusclePlus</h1>
         <article id="login">
 
 			<p>Bienvenido Mr. User</p>
-			<a href="../index.php">Log Out</a>
+			<a href="./index.php">Log Out</a>
         </article>
 	</header>
-  <?php include("../horizontalMenu.php"); ?>
+  <?php include("./horizontalMenu.php"); ?>
 
         <section id="main">
             <article id="entradasHilo">
                 <article id="hiloUsuario">
-                	<img src="../imagenes/bebe2.png" title="Icono diseñado por Freepik desde www.flaticon.com con licencia CC 3.0 BY">
+                	<img src="./imagenes/bebe2.png" title="Icono diseñado por Freepik desde www.flaticon.com con licencia CC 3.0 BY">
                 	<p id="nombre">Raul23</p>
                     <p id="titulo">Registrado: </p><p id="info">31/02/1995</p>
                     <p id="titulo">Mensajes: </p><p id="info">258</p>
@@ -35,7 +35,7 @@
                     </p>
                 </article>
                 <article id="hiloUsuario">
-                	<img src="../imagenes/feliz.png" title="Icono diseñado por Freepik desde www.flaticon.com con licencia CC 3.0 BY">
+                	<img src="./imagenes/feliz.png" title="Icono diseñado por Freepik desde www.flaticon.com con licencia CC 3.0 BY">
                     <p id="nombre">Santi32</p>
                     <p id="titulo">Registrado: </p><p id="info">03/11/2001</p>
                     <p id="titulo">Mensajes: </p><p id="info">2</p>
@@ -46,6 +46,6 @@
             </article>
 
         </section>
-        <?php include("../foot.php"); ?>
+        <?php include("./foot.php"); ?>
 </body>
 </html>

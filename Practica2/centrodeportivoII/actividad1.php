@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Yoga | Centro Deportivo MusclePlus</title>
-	<link rel="stylesheet" type="text/css" href="../estilos.css"    />
+	<link rel="stylesheet" type="text/css" href="./estilos.css"    />
 	<meta name="viewport" content="width=device-width">
 
 	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"> <!--Fuente de google-->
@@ -13,19 +13,19 @@
 <body>
 	<section id="page">
 	    <header>
-        	<article id="imagen"><img src="../imagenes/ejercer.png" title="Icono diseñado por Freepik desde www.flaticon.com con licencia CC 3.0 BY"></article>
+        	<article id="imagen"><img src="./imagenes/ejercer.png" title="Icono diseñado por Freepik desde www.flaticon.com con licencia CC 3.0 BY"></article>
                         <h1 id="tituloWeb">Centro Deportivo MusclePlus</h1>
             <article id="login">
 
                 	<p>Bienvenido Mr. User</p>
-                    <a href="../index.php">Log Out</a>
+                    <a href="./index.php">Log Out</a>
             </article>
         </header>
-        <?php include("../horizontalMenu.php"); ?>
+        <?php include("./horizontalMenu.php"); ?>
         <section id="main">
             <article id="mainLeft">
                 <article id="actividadLogo">
-            	   <img src="../imagenes/hinduist-yoga-position.png" title="Icono diseñado por Freepik desde www.flaticon.com con licencia CC 3.0 BY">
+            	   <img src="./imagenes/hinduist-yoga-position.png" title="Icono diseñado por Freepik desde www.flaticon.com con licencia CC 3.0 BY">
                 </article>
             </article>
                 <article id="mainRight">
@@ -35,7 +35,7 @@
 
                 </article>
         </section>
-        <?php include("../foot.php"); ?>
+        <?php include("./foot.php"); ?>
 	</section>
 </body>
 </html>

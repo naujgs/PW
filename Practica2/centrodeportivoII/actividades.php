@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Bienvenido Mr. User | Centro Deportivo MusclePlus</title>
-	<link rel="stylesheet" type="text/css" href="../estilos.css"    />
+	<link rel="stylesheet" type="text/css" href="./estilos.css"    />
 	<meta name="viewport" content="width=device-width">
 
 	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"> <!--Fuente de google-->
@@ -12,16 +12,16 @@
 <body>
 	<section id="page">
 	    <header>
-        	<?php include("../cabecera.php") ?>
+        	<?php include("./cabecera.php") ?>
         </header>
-        <?php include("../horizontalMenu.php"); ?>
+        <?php include("./horizontalMenu.php"); ?>
         <section id="main">
             <article id="mainLeft">
             	<article id="scrollActividades">
                 	<article id="firstActividad">
                     	<article id="left">
 
-                        <a href="https://www.freepik.com/free-photo/pregnant-woman-doing-yoga-in-gym_1995266.htm"><img src="../imagenes/275211-P5MTDZ-704.jpg" title="Icono diseñado por Freepik desde www.flaticon.com con licencia CC 3.0 BY"></a>
+                        <a href="https://www.freepik.com/free-photo/pregnant-woman-doing-yoga-in-gym_1995266.htm"><img src="./imagenes/275211-P5MTDZ-704.jpg" title="Icono diseñado por Freepik desde www.flaticon.com con licencia CC 3.0 BY"></a>
                         </article>
                         <article id="right">
                         <h4>Yoga</h4>
@@ -54,11 +54,11 @@ En la anterior edición del campeonato Lewis Hamilton se hacía con el primer pu
 
 Los 45 puntos de Aldridge, la mejor actuación de su carrera superando los 44 que anotó ante Denver en enero de 2014, fueron una de las claves en el sexto triunfo consecutivo de los Spurs. La racha les permite afianzarse en las plazas para disputar los ‘playoffs’ después de haber estado por momentos fuera de ellas.<br>
 
-...</p>
+..</p>
                 </article>
             </article>
         </section>
-        <?php include("../foot.php"); ?>
+        <?php include("./foot.php"); ?>
 	</section>
 </body>
 </html>
