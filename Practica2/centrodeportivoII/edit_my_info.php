@@ -46,7 +46,7 @@
     	//cerramos la conexion con la base de datos realizada en el if(conectarBaseDatos)
     	closeConexion($conex);
   	?>
-    <p>Modifica los datos de <u><b><?php echo $usuario['nombre'];?></b></u><br/>Cada campo muestra el valor actual</p>
+    <p id="edit_user">Modifica los datos de <u><b><?php echo $usuario['nombre'];?></b></u><br/>Cada campo muestra el valor actual</p>
     	<form action="./php_script/mod_my_info.php" method="post" onSubmit="return modifica_datos_registro();">
 			<fieldset>
                 <legend>Datos Personales</legend>
