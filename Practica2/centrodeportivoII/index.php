@@ -2,7 +2,7 @@
   include("./php_script/my_functions.php");
   include("./php_script/datos_conexion.php");
 /*	iniciamos sesion en php y utilizamos la informacion almacenada en la cookie que creamos en "comprobar_aceso.php"	*/
-  session_start();
+//  session_start();
 
  ?>
 
