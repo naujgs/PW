@@ -24,10 +24,9 @@
 					$_SESSION['dni'] = $valor['dni'];
 				}
 
-				//Si el logueo esta correcto, nos mandara al interior del sistema.
-				?>
-				<script type="text/javascript">location.href="../index.php";</script>
-				<?php
+				//Si el logueo esta correcto, nos redireccionara a la misma web donde estamos.
+
+				header("Location: ".$_SERVER['HTTP_REFERER']);
 			}else{
 				//si el usuario no existe, mostramos un error y redireccionamos
 				?>
