@@ -25,7 +25,7 @@
     <title>Edita tu informacion de usuario usuario | Centro Deportivo MusclePlus</title>
 	<link rel="stylesheet" type="text/css" href="./estilos.css"    />
 			<!-- CARGAMOS FUNCIONES JAVASCRIPT -->
-	<script type="text/javascript" src="./js/dinamic_functions.js"></script>
+
 	<meta name="viewport" content="width=device-width">
 
 	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"> <!--Fuente de google-->
@@ -49,20 +49,20 @@
     	closeConexion($conex);
   	?>
     <p id="edit_user">Modifica los datos de <u><b><?php echo $usuario['nombre'];?></b></u><br/>Cada campo muestra el valor actual</p>
-    	<form action="./php_script/mod_my_info.php" method="post" onSubmit="return modifica_datos_registro();">
+    	<form onsubmit="return modifica_datos_registro();" action="./php_script/mod_my_info.php" method="post">
 			<fieldset>
                 <legend>Datos Personales</legend>
                 <article id="cople">
                     <label for="dni">DNI</label>
-                    <input name="dni" type="text" value="<?php echo $usuario['dni']?>"><br>
+                    <input id="dni" name="dni" type="text" value="<?php echo $usuario['dni']?>"><br>
                 </article>
                 <article id="cople">
                     <label for="name">Nombre y Apellidos:</label>
-                    <input name="name" type="text" value="<?php echo $usuario['nombre']?>"><br>
+                    <input id="name" name="name" type="text" value="<?php echo $usuario['nombre']?>"><br>
                 </article>
                 <article id="cople">
                     <label for="password">Contraseña:</label>
-                    <input name="password" type="password" value="<?php echo $usuario['password']?>"><br>
+                    <input id="password" name="password" type="password" value="<?php echo $usuario['password']?>"><br>
                 </article>
                 <article id="cople">
                     <label for="birth">Fecha de Nacimiento:</label>
@@ -72,7 +72,7 @@
                         <legend>Dirección</legend>
                         <article id="cople">
                             <label for="street">Calle y número</label>
-                            <input name="street" type="text" value="<?php echo $usuario['calle']?>">
+                            <input id="street" name="street" type="text" value="<?php echo $usuario['calle']?>">
                         </article>
                         <article id="cople">
                             <label for="city">Ciudad</label>
@@ -80,12 +80,12 @@
                         </article>
                         <article id="cople">
 	                        <label for="zip">Cod. Postal</label>
-	                        <input name="zip" type="number" value="<?php echo $usuario['zip']?>">
+	                        <input id="zip" name="zip" type="number" value="<?php echo $usuario['zip']?>">
 						</article>
                     </fieldset>
 				<article id="cople">
                     <label for="email">Correo electronico</label>
-                    <input name="email" type="email" value="<?php echo $usuario['email']?>"><br>
+                    <input id="email" name="email" type="email" value="<?php echo $usuario['email']?>"><br>
                 </article>
                 <article id="cople">
                     <label for="telefono">Telefono Movil</label>
@@ -106,5 +106,6 @@
 	</section>
 	<?php include("./foot.php"); ?>
 
+<script type="text/javascript" src="./js/dinamic_functions.js"></script>
 </body>
 </html>
