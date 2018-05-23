@@ -39,7 +39,7 @@
                     <li><a href="./files/localizacion.php">Localización</a></li>
                     <li><a href="#">Precios</a></li>
                     <li><a href="./files/altausuario.php">Alta de usuarios</a></li>
-                    <li><a href="./files/foro.php">Foro</a></li>
+                    <li><img src="imagenes/locked.png"><a href="./files/foro.php">Foro</a></li>
             	</ul>
             </article>
         </section>
