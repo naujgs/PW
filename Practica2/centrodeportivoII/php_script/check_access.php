@@ -3,8 +3,8 @@
 	session_start();
 
 	//Incluimos las funciones y datos de conexion
-	include("../my_functions.php");
-	include("../datos_conexion.php");
+	include("./my_functions.php");
+	include("./datos_conexion.php");
 
 	if(conectarBaseDatos($host, $usuario_bd, $clave_bd, $basedatos) ){
 
@@ -34,10 +34,10 @@
           <center>
   				      <p>ERROR!!</p>
                 <p>El usuario introducido no está registrado en el sistema</p>
-                <img width="150px" src="../../imgagenes/giphy.gif"/>
+                <img width="150px" src="../imgagenes/giphy.gif"/>
           </center>
   				<!-- REDIRECCIONADO -->
-         	<script type="text/javascript">setTimeout("location.href='../../index.php'", 3000);</script>
+         	<script type="text/javascript">setTimeout("location.href='../index.php'", 3000);</script>
 				<?php
 			}
 			//cerramos la sesion iniciada al principio
@@ -46,9 +46,9 @@
 		}else{
 			//Si se intenta acceder desde URL sin formulario de acceso, se le echa fuera a la web de acceso
 			?>
-            	<center> <img width="150px" src="../../img/giphy.gif"/></center>
+            	<center> <img width="150px" src="../imagenes/giphy.gif"/></center>
 				<!--REDIRECCION-->
-			<script type="text/javascript">location.href = "../../index.php";</script>
+			<script type="text/javascript">location.href = "../index.php";</script>
 			<?php
 		}
 	} else {
@@ -57,11 +57,11 @@
         <center>
           <p align="center">ERROR!! En la conexión con la Base de Datos</p>
           <p align="center">Contacte con el administrador del sistema</p>
-          <img width="150px" src="../../img/giphy.gif"/>
+          <img width="150px" src="../imagenes/giphy.gif"/>
         </center>
 
 					<!-- REDIRECCIONADO -->
-				<script type="text/javascript">setTimeout("location.href='../../index.php'", 3000);</script>
+				<script type="text/javascript">setTimeout("location.href='../index.php'", 3000);</script>
       <?php
 	}
 ?>

@@ -1,6 +1,7 @@
 <article id="horizontalMenu">
   <!-- code included -->
         <ul>
+          <li><a href="./index.php">Inicio</a></li>
           <li><a href="./actividades.php">Actividades</a></li>
           <li><a href="./horario.php">Horario</a></li>
           <li><a href="./tecnicos.php">Tecnicos</a></li>

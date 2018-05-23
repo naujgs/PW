@@ -11,6 +11,6 @@ session_destroy();
  <center>
  <p>Cerrando Sesión</p>
  <p>Hasta Pronto!</p>
- <img width="150px" src="../../imagenes/giphy.gif"/>
+ <img width="150px" src="../imagenes/giphy.gif"/>
 <!-- REDIRECCIONADO -->
- <script type="text/javascript">setTimeout("location.href='../../index.php'", 3000);</script>
+ <script type="text/javascript">setTimeout("location.href='../index.php'", 3000);</script>
