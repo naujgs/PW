@@ -23,7 +23,9 @@
 
 <body>
 	<section id="page">
+    <header>
 	    <?php include("./cabecera.php") ?>
+    </header>
         <section id="main">
             <article id="mainLeft">
 
