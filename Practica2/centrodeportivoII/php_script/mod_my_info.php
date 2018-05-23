@@ -19,7 +19,7 @@
 		//	obtenemos los datos que obtenemos del formulario
 
 		/*	He obtenido el dni pre-cambio por si el dni que queremos ponerle ya estubiera en nuestra base de datos. Encontes le dejariamos establecido el que hay ahora mismo*/
-
+		$id = $_SESSION['dni'];
 		$dni_new = $_POST['dni'];
 		$nombre_new = $_POST['name'];
 		$birthD_new = $_POST['birth'];
@@ -33,7 +33,7 @@
 		$rol = $_SESSION['rol'];
 
 		//Edito los datos en la base de datos
-		if(editUser($dni, $clave_new, $nombre_new, $birthD_new, $direccion_new, $ciudad_new, $zip_new, $email_new, $telefono_new, $periodo_new, $rol)){
+		if(editUser($id, $dni_new, $clave_new, $nombre_new, $birthD_new, $direccion_new, $ciudad_new, $zip_new, $email_new, $telefono_new, $periodo_new, $rol)){
 			//actualizo la sesion
 			$_SESSION['nombre'] = $nombre_new;
 			$_SESSION['dni'] = $dni_new;
@@ -41,7 +41,7 @@
 			<center>
 			<p>Datos modificados corréctamente</p>
 			<p>Espere, será redireccionado</p>
-			<img width="150px" src="../../img/giphy.gif"/>
+			<img width="150px" src="../imagenes/giphy.gif"/>
 			</center>
 
 			<!--REDIRECCION-->
@@ -52,7 +52,8 @@
 			<center>
 			<p >ERROR!! No se han podido modificar los datos</p>
 			<p>Espere, será redireccionado</p>
-			<img width="150px" src="../../img/giphy.gif"/>
+			<h1>error 1</h1>
+			<img width="150px" src="../imagenes/giphy.gif"/>
 			</center>
 
 				<!-- REDIRECCIONADO -->
@@ -65,7 +66,7 @@
       <center>
 	<p >ERROR!! En la conexión con la Base de Datos</p>
 	<p>Contacte con el administrador del sistema</p>
-	<img width="150px" src="../../img/giphy.gif"/>
+	<img width="150px" src="../imagenes/giphy.gif"/>
       </center>
 
 		<!-- REDIRECCIONADO -->

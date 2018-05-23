@@ -104,11 +104,12 @@ function obtenerDatosUser($Dni){
 }
 
 /*Funcion para modificar los datos de un usuario*/
-function editUser($dni, $psw, $nombre, $nacimiento, $calle, $ciudad, $zip, $email, $telefono, $periodo, $rol){
+function editUser($usuario, $dni, $psw, $nombre, $nacimiento, $calle, $ciudad, $zip, $email, $telefono, $periodo, $rol){
 	global $conex;
 
 	/*MODIFICACION DE DATOS EN LA TABLA*/
-	$consulta = "UPDATE usuario SET  dni='".$dni."',password='".$psw."', nombre='".$nombre."', nacimiento='".$nacimiento.", calle='".$calle."', ciudad='".$ciudad."', zip=¡".$zip.", email='".$email."', telefono='".$telefono."', periodo='".$periodo."', rol='".$rol."' WHERE dni = '".$dni."'";
+
+	$consulta = "UPDATE usuario SET  dni='".$dni."',password='".$psw."', nombre='".$nombre."', nacimiento='".$nacimiento."', calle='".$calle."', ciudad='".$ciudad."', zip='".$zip."', email='".$email."', telefono='".$telefono."', periodo='".$periodo."', rol='".$rol."' WHERE dni='".$usuario."'";
 
 
 	if( !mysqli_query($conex, $consulta) ) {
