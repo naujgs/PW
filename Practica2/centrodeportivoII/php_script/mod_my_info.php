@@ -26,11 +26,14 @@
 		$direccion_new = $_POST['street'];
 		$ciudad_new = $_POST['city'];
 		$zip_new = $_POST['zip'];
+		if(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);)
 		$email_new = $_POST['email'];
 		$telefono_new = $_POST['telefono'];
 		$periodo_new = $_POST['periodo'];
 		$clave_new = $_POST['password'];
 		$rol = $_SESSION['rol'];
+
+		//hacer un if, si los validadores dan false, redirecciono al formulario
 
 		//Edito los datos en la base de datos
 		if(editUser($id, $dni_new, $clave_new, $nombre_new, $birthD_new, $direccion_new, $ciudad_new, $zip_new, $email_new, $telefono_new, $periodo_new, $rol)){
