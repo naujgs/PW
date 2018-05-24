@@ -1,3 +1,12 @@
+<?php
+	/*	Reestablecemos la sesion activa, para poder obtener datos de esta atraves de la cookie*/
+	/*	La sesion fue creada al logearnos en el fichero "comprobar_validacion.php"*/
+	session_start();
+
+	include("./php_script/datos_conexion.php");
+	include("./php_script/my_functions.php");
+?>
+
 <!doctype html>
 <html>
 <head>
@@ -58,9 +67,8 @@
                     <input name="mobile" type="tel"><br>
                 </article>
 			</fieldset>
-
             <label for="partner">Periodo inicial de inscripción</label>
-            <select name="partner">
+            <select id="partner" name="partner">
                 <option value="1">1 mes</option>
                 <option value="2">2 meses</option>
                 <option value="3">3 meses</option>
@@ -73,10 +81,23 @@
               <option value="Radio">
               <option value="Amigos">
             </datalist><br>
+            <?php }elseif ( empty($_SESSION) || $_SESSION['rol'] != 'admin') { ?>
+              <label type="hidden" for="rol">Rol de la persona</label>
+              <select type="hidden" id="rol" name="rol">
+                  <option type="hidden" value="cliente">
+              </select><br>
+            <?php }elseif ($_SESSION['rol'] == 'admin') { ?>
+              <label for="rol">Rol de la persona</label>
+              <select id="rol" name="rol">
+                  <option value="cliente">
+                  <option value="monitor">
+                  <option value="admin">
+              </select><br>
+              <?php }//fin elseif ?>
             <article id="botons">
                 <input type="reset" value="Borrar">
                 <input type="submit" value="Aceptar">
-			</article>
+              </article>
         </form>
 	</section>
 	<?php include("./foot.php"); ?>
