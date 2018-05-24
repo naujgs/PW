@@ -27,15 +27,15 @@
 			<!-- CARGAMOS FUNCIONES JAVASCRIPT -->
 
 	<meta name="viewport" content="width=device-width">
-
+	<script type="text/javascript" src="./js/dinamic_functions.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"> <!--Fuente de google-->
 </head>
 <body>
 	<header>
     <?php include("./cabecera.php") ?>
 	</header>
+		<?php include("./horizontalMenu.php"); ?>
   <section id="main">
-  	<?php include("./horizontalMenu.php"); ?>
 
     <!-- Conectamos con la base de datos para obtener los datos del usuario que deseamos modificar -->
     <?php
@@ -66,7 +66,7 @@
                 </article>
                 <article id="cople">
                     <label for="birth">Fecha de Nacimiento:</label>
-                    <input name="birth" type="date" value="<?php echo $usuario['nacimiento']?>"><br>
+                    <input id="birth" name="birth" type="date" value="<?php echo $usuario['nacimiento']?>"><br>
                 </article>
                     <fieldset>
                         <legend>Dirección</legend>
@@ -76,7 +76,7 @@
                         </article>
                         <article id="cople">
                             <label for="city">Ciudad</label>
-                            <input name="city" type="text" value="<?php echo $usuario['ciudad']?>">
+                            <input id="city" name="city" type="text" value="<?php echo $usuario['ciudad']?>">
                         </article>
                         <article id="cople">
 	                        <label for="zip">Cod. Postal</label>
@@ -89,11 +89,11 @@
                 </article>
                 <article id="cople">
                     <label for="telefono">Telefono Movil</label>
-                    <input name="telefono" type="tel" value="<?php echo $usuario['telefono']?>"><br>
+                    <input id="telefono" name="telefono" type="tel" value="<?php echo $usuario['telefono']?>"><br>
                 </article>
 			</fieldset>
       <label for="periodo">Periodo inicial de inscripción</label>
-      <select name="periodo">
+      <select id="periodo" name="periodo">
           <option value="1">1 mes</option>
           <option value="2">2 meses</option>
           <option value="3">3 meses</option>
@@ -106,6 +106,5 @@
 	</section>
 	<?php include("./foot.php"); ?>
 
-<script type="text/javascript" src="./js/dinamic_functions.js"></script>
 </body>
 </html>

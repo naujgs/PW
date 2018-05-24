@@ -1,7 +1,5 @@
 <?php
 	/*	Reestablecemos la sesion activa, para poder obtener datos de esta atraves de la cookie*/
-	/*	La sesion fue creada al logearnos en el fichero "comprobar_validacion.php"*/
-	session_start();
 
 	include("./php_script/datos_conexion.php");
 	include("./php_script/my_functions.php");
@@ -24,47 +22,52 @@
 	<?php include("./horizontalMenu.php"); ?>
 
 	<section id="main">
-    	<form method="post">
+    <!-- <form onsubmit="return modifica_datos_registro();" action="./php_script/mod_my_info.php" method="post"> -->
+    	<form action=".php_script/add_user.php" method="post">
 			<fieldset>
                 <legend>Datos Personales</legend>
                 <article id="cople">
-                    <label for="name">Nombre:</label>
-                    <input name="name" type="text"><br>
+                    <label for="dni">DNI</label>
+                    <input id="dni" name="dni" type="text"><br>
                 </article>
                 <article id="cople">
-                    <label for="surname">Apellidos:</label>
-                    <input name="surname" type="text"><br>
+                    <label for="name">Nombre y Apellidos:</label>
+                    <input id="name" name="name" type="text"><br>
+                </article>
+                <article id="cople">
+                    <label for="password">Contraseña:</label>
+                    <input id="password" name="password" type="password"><br>
                 </article>
                 <article id="cople">
                     <label for="birth">Fecha de Nacimiento:</label>
-                    <input name="birth" type="date"><br>
+                    <input id="birth" name="birth" type="date"><br>
                 </article>
                     <fieldset>
                         <legend>Dirección</legend>
                         <article id="cople">
                             <label for="street">Calle</label>
-                            <input name="street" type="text">
+                            <input id="street" name="street" type="text">
                         </article>
                         <article id="cople">
                             <label for="number">Numero</label>
-                            <input form="number" type="number"><br>
+                            <input id="number" form="number" type="number"><br>
                         </article>
                         <article id="cople">
                             <label for="city">Ciudad</label>
-                            <input name="city" type="text">
+                            <input id="city" name="city" type="text">
                         </article>
                         <article id="cople">
-	                        <label for="zip">Cod. Postal</label>
-	                        <input name="zip" type="number">
+                          <label for="zip">Cod. Postal</label>
+	                        <input id="zip" name="zip" type="number">
 						</article>
                     </fieldset>
 				<article id="cople">
                     <label for="email">Correo electronico</label>
-                    <input name="email" type="email"><br>
+                    <input id="email" name="email" type="email"><br>
                 </article>
                 <article id="cople">
                     <label for="mobile">Telefono Movil</label>
-                    <input name="mobile" type="tel"><br>
+                    <input id="mobile" name="mobile" type="tel"><br>
                 </article>
 			</fieldset>
             <label for="partner">Periodo inicial de inscripción</label>
@@ -81,17 +84,18 @@
               <option value="Radio">
               <option value="Amigos">
             </datalist><br>
-            <?php }elseif ( empty($_SESSION) || $_SESSION['rol'] != 'admin') { ?>
-              <label type="hidden" for="rol">Rol de la persona</label>
-              <select type="hidden" id="rol" name="rol">
-                  <option type="hidden" value="cliente">
+            <?php if ( empty($_SESSION) || $_SESSION['rol'] != 'admin') { ?>
+              <label style="visibility: hidden;" for="rol">Rol de la persona</label>
+              <!-- <select style="visibility: hidden;" id="rol" name="rol">
+                  <option value="cliente"> -->
+                <input id="rol"style="visibility:hidden" name="rol" value="cliente" />
               </select><br>
             <?php }elseif ($_SESSION['rol'] == 'admin') { ?>
               <label for="rol">Rol de la persona</label>
               <select id="rol" name="rol">
-                  <option value="cliente">
-                  <option value="monitor">
-                  <option value="admin">
+                  <option value="cliente">Cliente</option>
+                  <option value="monitor">Monitor</option>
+                  <option value="admin">Administrador</option>
               </select><br>
               <?php }//fin elseif ?>
             <article id="botons">
