@@ -46,7 +46,9 @@
                         <img src="./imagenes/unlocked.png">
                       <?php }//fin else ?>
                       <a href="./foro.php">Foro</a>
-                    </li>
+                      <?php if( !empty($_SESSION) ){ ?>
+                        <li><a href="./edit_my_info.php">Modifica tu info</a></li>
+                      <?php } ?>
             	</ul>
             </article>
         </section>
