@@ -1,4 +1,4 @@
-<?php
+.<?php
 	/*	Reestablecemos la sesion activa, para poder obtener datos de esta atraves de la cookie*/
 	/*	La sesion fue creada al logearnos en el fichero "comprobar_validacion.php"*/
 	session_start();
@@ -49,7 +49,7 @@
     	closeConexion($conex);
   	?>
     <p id="edit_user">Modifica los datos de <u><b><?php echo $usuario['nombre'];?></b></u><br/>Cada campo muestra el valor actual</p>
-    	<form onsubmit="return modifica_datos_registro();" action="./php_script/mod_my_info.php" method="post">
+    	<form onsubmit="return validador_formulario_usuario();" action="./php_script/mod_my_info.php" method="post">
 			<fieldset>
                 <legend>Datos Personales</legend>
                 <article id="cople">

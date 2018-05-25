@@ -23,7 +23,7 @@
 
 	<section id="main">
     <!-- <form onsubmit="return modifica_datos_registro();" action="./php_script/mod_my_info.php" method="post"> -->
-    	<form onsubmit="return valida_datos_registro()" action="./php_script/add_user.php" method="post">
+    	<form onsubmit="return validador_formulario_usuario();" action="./php_script/add_user.php" method="post">
 			<fieldset>
                 <legend>Datos Personales</legend>
                 <article id="cople">
