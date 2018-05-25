@@ -26,7 +26,7 @@
 		$direccion_new = $_POST['street'];
 		$ciudad_new = $_POST['city'];
 		$zip_new = $_POST['zip'];
-		if(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);)
+		//if(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);)
 		$email_new = $_POST['email'];
 		$telefono_new = $_POST['telefono'];
 		$periodo_new = $_POST['periodo'];
