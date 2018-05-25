@@ -149,5 +149,20 @@ function comprobarDNI($Dni){
 	}
 }
 
+/*Funcion que obtiene todos los recursos guardados en la BD que aun no haya llegado su dia y hora (futuros)*/
+function listadoPostPadre(){
+	global $conex;
+//busco los elementos que no tengan un post padre. Ellos son padre
+	$consulta = "SELECT * FROM foro where id_padre is null";
+
+	//Si falla la conexcion con la tabla o los datos devueltos es 0, ERROR
+	if( !$datos = mysqli_query($conex, $consulta) or mysqli_num_rows($datos) < 1 ){
+		return false;
+	} else {
+		//Si todo correcto devuelve datos.
+		return $datos;
+	}
+}
+
 
  ?>
