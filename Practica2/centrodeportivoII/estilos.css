@@ -396,6 +396,21 @@ footer a:active{
 	border-color: #717000;
 }
 
+#nuevoHilo label {
+	font-size: 20px;
+	float: left;
+}
+
+#nuevoHilo #titulo{
+	width: 80%;
+	margin-left: 5%;
+}
+
+#nuevoHilo #mensaje{
+	width: 80%;
+	height: 50px;
+	margin-left: 5%;
+}
 
 @media (max-width: 480px){
 	#mainMenu{
