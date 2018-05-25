@@ -164,5 +164,19 @@ function listadoPostPadre(){
 	}
 }
 
+/* Funcion para insertar un nuevo hilo en la base de datos */
+function insertHilo( $autor, $titulo, $mensaje, $padre, $hijo){
+	global $conex;
+
+	/* ESCRIBIMOS LA INSERCION PARA LUEGO EJECUTARLA*/
+	$inserta = "INSERT INTO usuario (id_post, titulo, mensaje, id_padre, id_hijo, id_autor) VALUES ('".NULL."','".$titulo."','".$mensaje."','".$padre."','".$hijo."','".$autor."')";
+
+	if ( !mysqli_query($conex, $inserta) ) {
+		return false;
+	}else{
+		return true;
+	}
+}
+
 
  ?>
