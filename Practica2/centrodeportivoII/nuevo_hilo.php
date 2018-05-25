@@ -31,10 +31,16 @@
     </header>
     <?php include("./horizontalMenu.php"); ?>
     <section id="main">
-			<form>
-        <input id="autor">
-        <input id="titulo"></br>
-        <input id="mensaje"></br>
+			<form id="nuevoHilo" action="./php_script/crea_hilo.php" method="post">
+        <label for="titulo">Titulo del hilo</label>
+        <input id="titulo" name="titulo"type="text"></br>
+        <label for="mensaje">Descripcion del hilo</label>
+        <input id="mensaje" name="mensaje"type="text"></br>
+        <input id="autor" style="visibility:hidden" value="<?php echo $_SESSION['dni']?>">
+        <article id="botons">
+          <input type="reset" value="Borrar">
+          <input type="submit" value="Aceptar">
+        </article>
 
       </form>
 		</section>

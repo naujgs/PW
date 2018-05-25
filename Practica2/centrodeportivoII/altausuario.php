@@ -83,7 +83,7 @@
               <label style="visibility: hidden;" for="rol">Rol de la persona</label>
               <!-- <select style="visibility: hidden;" id="rol" name="rol">
                   <option value="cliente"> -->
-                <input id="rol"style="visibility:hidden" name="rol" value="cliente" />
+                <input id="rol" style="visibility:hidden" name="rol" value="cliente" />
               </select><br>
             <?php }elseif ($_SESSION['rol'] == 'admin') { ?>
               <label for="rol">Rol de la persona</label>
