@@ -103,6 +103,8 @@ function obtenerDatosUser($Dni){
 	}
 }
 
+
+
 /*Funcion para modificar los datos de un usuario*/
 function editUser($usuario, $dni, $psw, $nombre, $nacimiento, $calle, $ciudad, $zip, $email, $telefono, $periodo, $rol){
 	global $conex;
@@ -127,6 +129,20 @@ function eliminarUser($Dni){
 	$consulta = "DELETE FROM usuarios WHERE dni = '".$Dni."'";
 
 	if( !mysqli_query($conex, $consulta) ) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
+/*Funcion que usaremos para comprobar si un DNI ya esta registrado en la BD, para evitar que un DNI se registre
+2 veces*/
+function comprobarDNI($Dni){
+	global $conex;
+	$consulta = "SELECT dni FROM usuarios WHERE dni = '".$Dni."'";
+
+	//Si falla la conexion con la tabla o los datos devueltos es 1 o mas(no se deberia dar el caso), ERROR
+	if( !$datos = mysqli_query($conex, $consulta) or mysqli_num_rows($datos) >= 1 ){
 		return false;
 	} else {
 		return true;

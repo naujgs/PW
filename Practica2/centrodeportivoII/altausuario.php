@@ -11,6 +11,7 @@
     <meta charset="utf-8">
     <title>Registro nuevo usuario | Centro Deportivo MusclePlus</title>
 	<link rel="stylesheet" type="text/css" href="./estilos.css"    />
+  <script type="text/javascript" src="./js/dinamic_functions.js"></script>
 	<meta name="viewport" content="width=device-width">
 
 	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"> <!--Fuente de google-->
@@ -49,10 +50,6 @@
                             <input id="street" name="street" type="text">
                         </article>
                         <article id="cople">
-                            <label for="number">Numero</label>
-                            <input id="number" form="number" type="number"><br>
-                        </article>
-                        <article id="cople">
                             <label for="city">Ciudad</label>
                             <input id="city" name="city" type="text">
                         </article>
@@ -70,20 +67,19 @@
                     <input id="mobile" name="mobile" type="tel"><br>
                 </article>
 			</fieldset>
-            <label for="partner">Periodo inicial de inscripción</label>
-            <select id="partner" name="partner">
+            <label for="period">Periodo inicial de inscripción</label>
+            <select id="period" name="pariod">
                 <option value="1">1 mes</option>
                 <option value="2">2 meses</option>
                 <option value="3">3 meses</option>
             </select><br>
             <label for="know">¿Cómo nos has conocido?</label>
-            <input list="know">
-            <datalist id="know">
+						<select id="know">
               <option value="Revistas">
               <option value="Television">
               <option value="Radio">
               <option value="Amigos">
-            </datalist><br>
+            </select><br>
             <?php if ( empty($_SESSION) || $_SESSION['rol'] != 'admin') { ?>
               <label style="visibility: hidden;" for="rol">Rol de la persona</label>
               <!-- <select style="visibility: hidden;" id="rol" name="rol">

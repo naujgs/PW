@@ -61,3 +61,10 @@ true en caso contrario */
 	}*/
   return error;
 }
+
+
+
+$('#know').on('change', function() {
+	var valor = $(this).val();
+	console.log(valor);
+});
