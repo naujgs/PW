@@ -76,19 +76,26 @@ function validador_formulario_usuario(){
 		error = false;
 	}
 
-	/* Si en algun momento se hemos activado el booleano error, devolvemos false para que no se envie,
-true en caso contrario */
-	/*if(error){
-		return false;
-	}else{
-		return true;
-	}*/
   return error;
 }
 
+function validador_crear_hilo(){
+//Comprobamos que ambos campos de un hilo no estan vacios
 
-/*
-$('#know').on('change', function() {
-	var valor = $(this).val();
-	console.log(valor);
-});*/
+	titulo = document.getElementById("titulo").value;
+	msj = document.getElementById("mensaje").value;
+	var pass = true;
+
+	if( titulo == null || titulo.length == 0 || /^\s+$/.test(titulo) ) {
+		alert('ERROR. El campo TITULO está vacio');
+		pass = false;
+	}
+
+	if( mensaje == null || mensaje.length == 0 || /^\s+$/.test(mensaje) ) {
+		alert('ERROR. El campo MENSAJE está vacio');
+		pass = false;
+	}
+
+	return pass;
+
+}
