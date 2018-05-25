@@ -5,17 +5,14 @@
 
 	/*	compruebo que se ha iniciado sesion*/
 	if( empty($_SESSION) ){
-	?>
+?>
 		    <!--	Redirijo	-->
 		<script type="text/javascript"> location.href="./index.php";</script>
     <?php
 	}
 	include("./php_script/datos_conexion.php");
 	include("./php_script/my_functions.php");
-
-?>
-
-
+	?>
 
 <!doctype html>
 <html>
@@ -32,19 +29,45 @@
     <header>
 	    <?php include("./cabecera.php") ?>
     </header>
-            <?php include("./horizontalMenu.php"); ?>
-            <section id="main">
-				<table id="foroEntradas">
-	                <thead>
-                    	<tr>
-	                        <th>Título</th><th>Autor</th><th>Fecha</br>Publicación</th><th>Visitas</th>
-                        </tr>
-					</thead>
-                    <tbody>
-                    	<tr><td><a href="./foroHilo.php">Cómo respirar para la correcta realizacion de un ejercicio</a></td><td>Raul23</td><td>01/03/2018</td><td>23</td></tr>
-                    	<tr><td><a href="">¿Debo comer pistachos despues de cada entrenamiento?</a></td><td>Paulina98</td><td>20/02/2018</td><td>1</td></tr>                    </tbody>
-                </table>
-			</section>
-			<?php include("./foot.php"); ?>
+    <?php include("./horizontalMenu.php"); ?>
+    <section id="main">
+			<a id="btnNewPost" href="nuevo_hilo.php">Crear Hilo</a>
+			<table id="foroEntradas">
+	  		<thead>
+	  			<tr>
+	    			<th>Título</th><th>Autor</th>
+	      	</tr>
+				</thead>
+				<tbody> <?php
+				//compruebo si se realiza la conexion con la base de datos
+				if( conectarBaseDatos($host, $usuario_bd, $clave_bd, $basedatos) ){
+					//Obtengo un listado con todos los recursos operativos del usuario
+					if( $informacion = listadoPostPadre() ){
+
+						while( $post = mysqli_fetch_array($informacion) ){
+
+							//Obtengo la informacion del autor del post
+							if ($infoAutor = obtenerDatosUser($post['id_autor']) ) {
+								$autor = mysqli_fetch_array($infoAutor);
+								?>
+								<tr>
+									<td>
+										<a href="./foroHilo.php?hilo=<?php echo $post['id_post']; ?>"><?php echo $post['titulo']; ?></a>
+									</td>
+									<td>
+										<?php echo $autor['nombre']; ?>
+									</td>
+								</tr>
+								<?php
+							}	//if ( get_user($post['id_autor']) )
+						}	//while( $post = mysqli_fetch_array($informacion) )
+					}	//if( $informacion = listadoPostPadre() )
+				}//fin if( conectarBaseDatos($host, $usuario_bd, $clave_bd, $basedatos) )
+				?>
+	    	</tbody>
+	    </table>
+
+		</section>
+		<?php include("./foot.php"); ?>
 </body>
 </html>

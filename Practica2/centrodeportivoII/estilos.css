@@ -388,6 +388,14 @@ footer a:active{
 	margin-left: 30%;
 }
 
+#btnNewPost{
+	float: right;;
+	margin: 0.5%;
+	background-color: #aaff80;
+	border:1.5px solid;
+	border-color: #717000;
+}
+
 
 @media (max-width: 480px){
 	#mainMenu{
