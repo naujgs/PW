@@ -1,3 +1,23 @@
+.<?php
+	/*	Reestablecemos la sesion activa, para poder obtener datos de esta atraves de la cookie*/
+	/*	La sesion fue creada al logearnos en el fichero "comprobar_validacion.php"*/
+	session_start();
+
+  /*	compruebo que se ha iniciado sesion. De esta forma evitamos que accedan a la url sin logearse antes*/
+  if( empty($_SESSION) ){
+  ?>
+        <!--	Redirijo	-->
+    <script type="text/javascript"> location.href="./index.php";</script>
+    <?php
+  }
+
+	//Cuando se llama a esta pagina, se envia el id del post que empieza el hilo
+	$id = $_GET['hilo'];
+
+	include("./php_script/datos_conexion.php");
+	include("./php_script/my_functions.php");
+?>
+
 <!doctype html>
 <html>
 <head>
@@ -16,6 +36,20 @@
   <?php include("./horizontalMenu.php"); ?>
 
         <section id="main">
+          <?php
+          if( conectarBaseDatos($host, $usuario_bd, $clave_bd, $basedatos)){
+  		      //Ahora obtenemos toda la informacion del usuario cuyo dni nos pasaron al invocar esta web
+            if($post = obtenerPost($id) ){
+	            $hilo = mysqli_fetch_array($post);
+
+              if ( $autor = obtenerDatosUser($hilo['id_autor']) ) {
+                $owner = mysqli_fetch_array($autor);
+              } // if ( $autor = obtenerDatosUser($hilo['id_autor']) )
+            } // if($post = obtenerPost($id) )
+          } //if( conectarBaseDatos($host, $usuario_bd, $clave_bd, $basedatos))
+          //cerramos la conexion con la base de datos realizada en el if(conectarBaseDatos)
+          closeConexion($conex);
+          ?>
             <article id="entradasHilo">
                 <article id="hiloUsuario">
                 	<img src="./imagenes/bebe2.png" title="Icono diseñado por Freepik desde www.flaticon.com con licencia CC 3.0 BY">

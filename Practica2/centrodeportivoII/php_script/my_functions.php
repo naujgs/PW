@@ -117,6 +117,21 @@ function obtenerDatosUser($Dni){
 	}
 }
 
+function obtenerPost($id){
+	global $conex;
+
+	$consulta = "SELECT * FROM foro WHERE id_post = '".$id."'";
+
+	// Si falla la conexion con la tabla o los datos devueltos es 0, ERROR
+	if( !$datos = mysqli_query($conex, $consulta) or mysqli_num_rows($datos) < 1 ){
+		return false;
+	} else {
+		//Si todo correcto devuelve datos.
+		return $datos;
+	}
+
+}
+
 
 
 /*Funcion para modificar los datos de un usuario*/
