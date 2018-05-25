@@ -22,7 +22,7 @@
 			//alert('No DNI');
 			//	El DNI introducido no esta en la base de datos
       //padre NULL porque el es padre. Hijo NULL, porque todavia no tiene
-			if( insertHilo( $autor, $titulo, $mensaje, 'NULL', 'NULL') ){
+			if( insertHilo( $autor, $titulo, $mensaje) ){
 				//alert('user insertado');
 				?>
 				<center>

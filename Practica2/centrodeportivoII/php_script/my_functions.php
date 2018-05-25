@@ -45,6 +45,20 @@ function insertUser($dni, $psw, $nombre, $nacimiento, $calle, $ciudad, $zip, $em
 	}
 }
 
+/* Funcion para insertar un nuevo hilo en la base de datos */
+function insertHilo( $autor, $titulo, $mensaje){
+	global $conex;
+
+	/* ESCRIBIMOS LA INSERCION PARA LUEGO EJECUTARLA*/
+	$inserta = "INSERT INTO foro (titulo, mensaje, id_autor) VALUES ('".$titulo."','".$mensaje."','".$autor."')";
+
+	if ( !mysqli_query($conex, $inserta) ) {
+		return false;
+	}else{
+		return true;
+	}
+}
+
 /*Funcion que devuelve los datos de un usuario por su nombre de usuario y clave*/
 function searchUser($dni, $clave){
 	global $conex;
@@ -164,19 +178,7 @@ function listadoPostPadre(){
 	}
 }
 
-/* Funcion para insertar un nuevo hilo en la base de datos */
-function insertHilo( $autor, $titulo, $mensaje, $padre, $hijo){
-	global $conex;
 
-	/* ESCRIBIMOS LA INSERCION PARA LUEGO EJECUTARLA*/
-	$inserta = "INSERT INTO usuario (id_post, titulo, mensaje, id_padre, id_hijo, id_autor) VALUES ('".NULL."','".$titulo."','".$mensaje."','".$padre."','".$hijo."','".$autor."')";
-
-	if ( !mysqli_query($conex, $inserta) ) {
-		return false;
-	}else{
-		return true;
-	}
-}
 
 
  ?>
