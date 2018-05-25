@@ -31,7 +31,7 @@
     </header>
     <?php include("./horizontalMenu.php"); ?>
     <section id="main">
-			<a id="btnNewPost" href="nuevo_hilo.php">Crear Hilo</a>
+			<a id="btnNewPost" href="./nuevo_hilo.php">Crear Hilo</a>
 			<table id="foroEntradas">
 	  		<thead>
 	  			<tr>
