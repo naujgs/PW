@@ -1,6 +1,6 @@
 /*	funcion para validar los datos del formulario de modificacion de datos de un usuario*/
 function modifica_datos_registro(){
-	alert('dentro');
+	//alert('dentro');
 
 	/*obtengo los datos que deseo validar*/
 	nombre = document.getElementById("name").value;
@@ -8,7 +8,7 @@ function modifica_datos_registro(){
   direccion = document.getElementById("street").value;
   zip = document.getElementById("zip").value;
 	email = document.getElementById("email").value;
-	alert(nombre);
+	//alert(nombre);
 	/*compruebo que obtengo bien los datos*/
 
 	var error = true;

@@ -24,7 +24,7 @@
 
 	<section id="main">
     <!-- <form onsubmit="return modifica_datos_registro();" action="./php_script/mod_my_info.php" method="post"> -->
-    	<form action=".php_script/add_user.php" method="post">
+    	<form action="./php_script/add_user.php" method="post">
 			<fieldset>
                 <legend>Datos Personales</legend>
                 <article id="cople">
@@ -67,18 +67,18 @@
                     <input id="mobile" name="mobile" type="tel"><br>
                 </article>
 			</fieldset>
-            <label for="period">Periodo inicial de inscripción</label>
-            <select id="period" name="pariod">
-                <option value="1">1 mes</option>
-                <option value="2">2 meses</option>
-                <option value="3">3 meses</option>
-            </select><br>
+			<label for="periodo">Periodo inicial de inscripción</label>
+      <select id="periodo" name="periodo">
+          <option value="1">1 mes</option>
+          <option value="2">2 meses</option>
+          <option value="3">3 meses</option>
+      </select><br>
             <label for="know">¿Cómo nos has conocido?</label>
-						<select id="know">
-              <option value="Revistas">
-              <option value="Television">
-              <option value="Radio">
-              <option value="Amigos">
+						<select id="know" name="know">
+              <option value="Revistas">Revistas</option>
+              <option value="Television">Television</option>
+              <option value="Radio">Radio</option>
+              <option value="Amigos">Amigos</option>
             </select><br>
             <?php if ( empty($_SESSION) || $_SESSION['rol'] != 'admin') { ?>
               <label style="visibility: hidden;" for="rol">Rol de la persona</label>
