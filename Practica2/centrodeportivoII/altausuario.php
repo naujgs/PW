@@ -11,7 +11,6 @@
     <meta charset="utf-8">
     <title>Registro nuevo usuario | Centro Deportivo MusclePlus</title>
 	<link rel="stylesheet" type="text/css" href="./estilos.css"    />
-  <script type="text/javascript" src="./js/dinamic_functions.js"></script>
 	<meta name="viewport" content="width=device-width">
 
 	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"> <!--Fuente de google-->
@@ -24,7 +23,7 @@
 
 	<section id="main">
     <!-- <form onsubmit="return modifica_datos_registro();" action="./php_script/mod_my_info.php" method="post"> -->
-    	<form action="./php_script/add_user.php" method="post" onSubmit="return valida_datos_registro.php">
+    	<form onsubmit="return valida_datos_registro()" action="./php_script/add_user.php" method="post">
 			<fieldset>
                 <legend>Datos Personales</legend>
                 <article id="cople">
@@ -101,6 +100,6 @@
         </form>
 	</section>
 	<?php include("./foot.php"); ?>
-
+  <script type="text/javascript" src="./js/dinamic_functions.js"></script>
 </body>
 </html>

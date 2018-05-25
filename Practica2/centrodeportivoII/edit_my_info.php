@@ -27,7 +27,7 @@
 			<!-- CARGAMOS FUNCIONES JAVASCRIPT -->
 
 	<meta name="viewport" content="width=device-width">
-	<script type="text/javascript" src="./js/dinamic_functions.js"></script>
+
 	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"> <!--Fuente de google-->
 </head>
 <body>
@@ -105,6 +105,6 @@
         </form>
 	</section>
 	<?php include("./foot.php"); ?>
-
+	<script type="text/javascript" src="./js/dinamic_functions.js"></script>
 </body>
 </html>
