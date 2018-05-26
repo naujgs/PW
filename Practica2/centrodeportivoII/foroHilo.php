@@ -85,13 +85,12 @@
 									</article>
 										<!-- Si eres administrador o el autor del post-->
 										<?php if( $_SESSION['rol'] = 'admin' || $owner2['dni'] == $_SESSION['dni']){ ?>
-										<a id="btnNewPost" href="./nuevo_hilo.php"><img="./imagenes/borrar.png"</a>
+											<a id="btnNewPost" href="./php_script/borrar_post.php?id=<?php echo $hilo2['id_post']?>&padre=<?php echo $hilo2['id_padre'] ?>"><img="./imagenes/borrar.png"</a>
 										<?php } ?>
 								</article>
 								<?php
 							} // if ( $autor = obtenerDatosUser($hilo['id_autor']) )
 						}	//fin while
-
 					} // if($post = obtenerPost($id) )
 				} //if( conectarBaseDatos($host, $usuario_bd, $clave_bd, $basedatos))
 				//cerramos la conexion con la base de datos realizada en el if(conectarBaseDatos)

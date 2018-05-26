@@ -155,8 +155,6 @@ function obtenerPostHijos($padre){
 	}
 }
 
-
-
 /*Funcion para modificar los datos de un usuario*/
 function editUser($usuario, $dni, $psw, $nombre, $nacimiento, $calle, $ciudad, $zip, $email, $telefono, $periodo, $rol){
 	global $conex;
@@ -179,6 +177,19 @@ function eliminarUser($Dni){
 
 	/*MODIFICACION DE DATOS EN LA TABLA*/
 	$consulta = "DELETE FROM usuarios WHERE dni = '".$Dni."'";
+
+	if( !mysqli_query($conex, $consulta) ) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
+function borrarPost($post){
+	global $conex;
+
+	/*MODIFICACION DE DATOS EN LA TABLA*/
+	$consulta = "DELETE FROM foro WHERE id_post = '".$Post."'";
 
 	if( !mysqli_query($conex, $consulta) ) {
 		return false;
