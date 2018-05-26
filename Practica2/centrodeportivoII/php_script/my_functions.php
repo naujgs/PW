@@ -1,9 +1,5 @@
 <?php
-/*  ***************************************************************************
-    ***************************************************************************
-          FUNCIONES PARA TRABAJAR CON LOS USUARIOS (table:usuario)
-    ***************************************************************************
-    ***************************************************************************/
+
 
 //Variable ambito global. La iniciamos asi para evitar problemas
 $conex = false;
@@ -143,6 +139,20 @@ function obtenerPost($id){
 		return $datos;
 	}
 
+}
+
+function obtenerPostHijos($padre){
+	global $conex;
+
+	$consulta = "SELECT * FROM 	foro WHERE id_padre = '".$padre."' ORDER BY id_post ASC";
+
+	// Si falla la conexion con la tabla o los datos devueltos es 0, ERROR
+	if( !$datos = mysqli_query($conex, $consulta) or mysqli_num_rows($datos) < 1 ){
+		return false;
+	} else {
+		//Si todo correcto devuelve datos.
+		return $datos;
+	}
 }
 
 

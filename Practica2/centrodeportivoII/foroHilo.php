@@ -62,6 +62,41 @@
           <p><?php echo $hilo['mensaje']; ?></p>
         </article>
       </article>
+
+
+			<?php
+				if( conectarBaseDatos($host, $usuario_bd, $clave_bd, $basedatos)){
+					//Ahora obtenemos todos los post que componen el hilo. Todos menos el padre
+					if($post = obtenerPostHijos($id) ){
+						while( $hilo = mysqli_fetch_array($post) ){
+							if ( $autor = obtenerDatosUser($hilo['id_autor']) ) {
+								$owner = mysqli_fetch_array($autor);
+								?>
+								<article id="hiloBlock">
+									<article id="hiloUsuario">
+										<img src="./imagenes/bebe2.png" title="Icono diseñado por Freepik desde www.flaticon.com con licencia CC 3.0 BY">
+										<p id="nombre"><?php echo $owner['nombre'] ?></p>
+										<p id="titulo">De: </p><p id="info"><?php echo $owner['ciudad']; ?></p>
+										<p id="titulo">Rol: </p><p id="info"><?php echo $owner['rol']; ?></p>
+									</article>
+									<article id="hiloMensaje">
+										<h4><?php echo $hilo['titulo']; ?></h4>
+										<p><?php echo $hilo['mensaje']; ?></p>
+									</article>
+								</article>
+								<?php
+							} // if ( $autor = obtenerDatosUser($hilo['id_autor']) )
+						}	//fin while
+
+					} // if($post = obtenerPost($id) )
+				} //if( conectarBaseDatos($host, $usuario_bd, $clave_bd, $basedatos))
+				//cerramos la conexion con la base de datos realizada en el if(conectarBaseDatos)
+				closeConexion($conex);
+			?>
+
+
+
+
       <article id="hiloBlock">
         <article id="hiloUsuario">
         	<img src="./imagenes/feliz.png" title="Icono diseñado por Freepik desde www.flaticon.com con licencia CC 3.0 BY">
