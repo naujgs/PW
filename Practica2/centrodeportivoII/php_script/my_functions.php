@@ -189,7 +189,7 @@ function borrarPost($post){
 	global $conex;
 
 	/*MODIFICACION DE DATOS EN LA TABLA*/
-	$consulta = "DELETE FROM foro WHERE id_post = '".$Post."'";
+	$consulta = "DELETE FROM foro WHERE id_post = '".$post."'";
 
 	if( !mysqli_query($conex, $consulta) ) {
 		return false;

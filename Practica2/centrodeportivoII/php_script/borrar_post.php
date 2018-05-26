@@ -15,8 +15,8 @@
 		if( conectarBaseDatos($host, $usuario_bd, $clave_bd, $basedatos) ){
 //			alert('conexion');
 			//Obtenemos datos pasados por el formulario de acceso
-			$post = $_GET['id']
-      $padre = $_GET['padre']
+			$post = $_GET['id'];
+      $padre = $_GET['padre'];
 
 			//alert('No DNI');
 			//	El DNI introducido no esta en la base de datos
@@ -25,7 +25,7 @@
 				//alert('user insertado');
 				?>
 				<!-- REDIRECCIONADO -->
-   				<script type="text/javascript">setTimeout("location.href='../foroHilo.php?hilo=<?php echo $padre?>", 000);</script>
+   				<script type="text/javascript">setTimeout("location.href='../foroHilo.php?hilo=<?php echo $padre; ?>'", 000);</script>
 				<?php
 
 			}else{//	fin if(insertar datos) 29|54
