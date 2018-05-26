@@ -58,6 +58,19 @@ function insertHilo( $autor, $titulo, $mensaje){
 		return true;
 	}
 }
+/* Funcion para insertar un post en un hilo ya creado */
+function insertPost( $autor, $titulo, $mensaje, $padre){
+	global $conex;
+
+	/* ESCRIBIMOS LA INSERCION PARA LUEGO EJECUTARLA*/
+	$inserta = "INSERT INTO foro (titulo, mensaje, is_padre, id_autor) VALUES ('".$titulo."','".$mensaje."', '".$padre."', '".$autor."')";
+
+	if ( !mysqli_query($conex, $inserta) ) {
+		return false;
+	}else{
+		return true;
+	}
+}
 
 /*Funcion que devuelve los datos de un usuario por su nombre de usuario y clave*/
 function searchUser($dni, $clave){

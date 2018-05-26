@@ -42,7 +42,6 @@
           <input type="reset" value="Borrar">
           <input type="submit" value="Aceptar">
         </article>
-
       </form>
 		</section>
 		<?php include("./foot.php"); ?>

@@ -73,6 +73,17 @@
           <p>Muchas gracias! Post muy útil.</p>
         </article>
       </article>
+			<form onsubmit="return validador_crear_hilo();" id="nuevoHilo" action="./php_script/crear_post.php" method="post">
+        <label for="mensaje">Aportación</label>
+        <textarea id="mensaje" name="mensaje"type="text" placeholder="Maximo 1024 caracteres"></textarea></br>
+        <input id="titulo" name="titulo" style="visibility:hidden" value="RE: <?php echo $hilo['titulo']?>"></br>
+        <input id="autor" name="autor" style="visibility:hidden" value="<?php echo $_SESSION['dni']?>">
+				<input id="padre" name="padre" style="visibility:hidden" value="<?php echo $hilo['id_post']?>">
+        <article id="botons">
+          <input type="reset" value="Borrar">
+          <input type="submit" value="Aceptar">
+        </article>
+      </form>
     </article>
 
   </section>
