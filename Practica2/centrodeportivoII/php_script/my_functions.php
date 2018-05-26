@@ -63,7 +63,7 @@ function insertPost( $autor, $titulo, $mensaje, $padre){
 	global $conex;
 
 	/* ESCRIBIMOS LA INSERCION PARA LUEGO EJECUTARLA*/
-	$inserta = "INSERT INTO foro (titulo, mensaje, is_padre, id_autor) VALUES ('".$titulo."','".$mensaje."', '".$padre."', '".$autor."')";
+	$inserta = "INSERT INTO foro (titulo, mensaje, id_padre, id_autor) VALUES ('".$titulo."','".$mensaje."', '".$padre."', '".$autor."')";
 
 	if ( !mysqli_query($conex, $inserta) ) {
 		return false;
