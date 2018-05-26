@@ -1,9 +1,5 @@
-<?php
-	/*	Reestablecemos la sesion activa, para poder obtener datos de esta atraves de la cookie*/
 
-	include("./php_script/datos_conexion.php");
-	include("./php_script/my_functions.php");
-?>
+<?php include("./php_script/simple_include.php"); ?>
 
 <!doctype html>
 <html>
@@ -17,7 +13,7 @@
 </head>
 <body>
 	<header>
-    <?php include("./cabecera.php") ?>
+    <?php include("./cabecera.php"); ?>
 	</header>
 	<?php include("./horizontalMenu.php"); ?>
 

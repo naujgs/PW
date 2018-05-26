@@ -1,8 +1,4 @@
-.<?php
-
-	include("./php_script/datos_conexion.php");
-	include("./php_script/my_functions.php");
-?>
+<?php include("./php_script/simple_include.php"); ?>
 
 <html>
 <!doctype html>
