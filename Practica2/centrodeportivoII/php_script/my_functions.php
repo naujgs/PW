@@ -200,11 +200,11 @@ function editUser($usuario, $dni, $psw, $nombre, $nacimiento, $calle, $ciudad, $
 }
 
 /*Funcion para eliminar un usuario de la BD */
-function eliminarUser($Dni){
+function eliminarUser($dni){
 	global $conex;
 
 	/*MODIFICACION DE DATOS EN LA TABLA*/
-	$consulta = "DELETE FROM usuarios WHERE dni = '".$Dni."'";
+	$consulta = "DELETE FROM usuario WHERE dni = '".$dni."'";
 
 	if( !mysqli_query($conex, $consulta) ) {
 		return false;
@@ -230,7 +230,7 @@ function borrarPost($post){
 2 veces*/
 function comprobarDNI($Dni){
 	global $conex;
-	$consulta = "SELECT dni FROM usuarios WHERE dni = '".$Dni."'";
+	$consulta = "SELECT dni FROM usuario WHERE dni = '".$Dni."'";
 
 	//Si falla la conexion con la tabla o los datos devueltos es 1 o mas(no se deberia dar el caso), ERROR
 	if( !$datos = mysqli_query($conex, $consulta) or mysqli_num_rows($datos) >= 1 ){
