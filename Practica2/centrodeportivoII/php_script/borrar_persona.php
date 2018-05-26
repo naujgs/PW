@@ -15,15 +15,16 @@
 		if( conectarBaseDatos($host, $usuario_bd, $clave_bd, $basedatos) ){
 //			alert('conexion');
 			//Obtenemos datos pasados por el formulario de acceso
-
+			$id = $_GET['dni'];
 			//alert('No DNI');
 			//	El DNI introducido no esta en la base de datos
       //padre NULL porque el es padre. Hijo NULL, porque todavia no tiene
 			if( eliminarUser($id) ){
 				//alert('user insertado');
 				?>
-				<!-- REDIRECCIONADO -->
-   				<script type="text/javascript">setTimeout("location.href='../tecnicos.php'", 3000);</script>
+        <?php $page = $_SERVER['HTTP_REFERER']; ?>
+      <!-- REDIRECCIONADO -->
+      <script type="text/javascript">setTimeout("location.href='<?php echo $page ?>'", 2000);</script>
 				<?php
 
 			}else{//	fin if(insertar datos) 29|54
@@ -35,8 +36,9 @@
 					<p>Contacte con el administrador del sistema</p>
    					<img width="150px" src="../imagenes/giphy.gif"/>
     			</center>
+          <?php $page = $_SERVER['HTTP_REFERER']; ?>
 				<!-- REDIRECCIONADO -->
-				<script type="text/javascript">setTimeout("location.href='../tecnicos.php'", 2000);</script>
+				<script type="text/javascript">setTimeout("location.href='<?php echo $page ?>'", 2000);</script>
     			<?php
 			}	//fin else if(insertar datos) 39
 
