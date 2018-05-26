@@ -110,6 +110,7 @@ footer{
 	float:left;
 	width:100%;
 	text-align:center;
+	margin-bottom: 5%;
 }
 
 footer a{
@@ -235,7 +236,7 @@ footer a:active{
 #profile{
 	width:30%;
 	float:left;
-	text-align:center;
+	/*text-align:center;*/
 	margin:1%;
 	border: 1px groove;
 }
@@ -402,6 +403,8 @@ footer a:active{
 	background-color: #aaff80;
 	border:1.5px solid;
 	border-color: #717000;
+	padding: 0.2%;
+	border-radius: 5px;
 }
 
 #nuevoHilo label {

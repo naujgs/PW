@@ -97,6 +97,20 @@ function listUsersAll(){
 	}
 }
 
+function getClientsList(){
+	global $conex;
+	//$consulta = "SELECT * FROM usuarios WHERE dni != '".$Dni."' ORDER BY dni ASC";
+  $consulta = "SELECT * FROM usuario WHERE rol = 'cliente'ORDER BY dni DESC";
+
+	//Si falla la conexcion con la tabla o los datos devueltos es 0, ERROR
+	if( !$datos = mysqli_query($conex, $consulta) or mysqli_num_rows($datos) < 1 ){
+		return false;
+	} else {
+		//Si todo correcto devuelve datos.
+		return $datos;
+	}
+}
+
 /*Funcion que obtiene todos los usuarios con un determinado ROL*/
 function listUserRoll($rol){
 	global $conex;
