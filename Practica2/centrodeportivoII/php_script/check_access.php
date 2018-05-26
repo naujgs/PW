@@ -33,7 +33,7 @@
           <center>
   				      <p>ERROR!!</p>
                 <p>El usuario introducido no está registrado en el sistema</p>
-                <img width="150px" src="../imgagenes/giphy.gif"/>
+                <img width="150px" src="../imagenes/giphy.gif"/>
           </center>
   				<!-- REDIRECCIONADO -->
          	<script type="text/javascript">setTimeout("location.href='../index.php'", 3000);</script>

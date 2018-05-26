@@ -83,7 +83,8 @@
 										<p><?php echo $hilo2['mensaje']; ?></p>
 									</article>
 										<!-- Si eres administrador o el autor del post-->
-										<?php if( $_SESSION['rol'] == 'admin' || $owner2['dni'] == $_SESSION['dni']){ ?>
+										<?php echo $owner2['dni']; ?> || <?php echo $_SESSION['dni']; ?> || <?php echo $_SESSION['rol']; ?>
+										<?php if( $_SESSION['rol'] == "admin" || $owner2['dni'] == $_SESSION['dni']){ ?>
 											<a id="btnNewPost" href="./php_script/borrar_post.php?id=<?php echo $hilo2['id_post']?>&padre=<?php echo $hilo2['id_padre'] ?>"><img src="./imagenes/borrar.png"></a>
 										<?php } ?>
 								</article>

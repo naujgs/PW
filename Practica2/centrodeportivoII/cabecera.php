@@ -46,7 +46,7 @@ $_SESSION['rol'];*/
   </article>
   <?php } else{//fin if( empty($_SESSION['nomre']) ) ?>
   <article id="login">
-    <p>Bienvenido <?php echo $_SESSION['nombre'] ?></p>
+    <p>Bienvenido <?php echo $_SESSION['nombre']; ?></p>
     <a href="./php_script/log_out.php">Log Out</a>
   </article>
 <?php
