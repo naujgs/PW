@@ -83,6 +83,10 @@
 										<h4><?php echo $hilo2['titulo']; ?></h4>
 										<p><?php echo $hilo2['mensaje']; ?></p>
 									</article>
+										<!-- Si eres administrador o el autor del post-->
+										<?php if( $_SESSION['rol'] = 'admin' || $owner2['dni'] == $_SESSION['dni']){ ?>
+										<a id="btnNewPost" href="./nuevo_hilo.php"><img="./imagenes/borrar.png"</a>
+										<?php } ?>
 								</article>
 								<?php
 							} // if ( $autor = obtenerDatosUser($hilo['id_autor']) )
