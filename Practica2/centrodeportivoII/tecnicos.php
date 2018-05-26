@@ -1,5 +1,11 @@
-<!doctype html>
+.<?php
+
+	include("./php_script/datos_conexion.php");
+	include("./php_script/my_functions.php");
+?>
+
 <html>
+<!doctype html>
 <head>
     <meta charset="utf-8">
     <title>Nuestro Equipo | Centro Deportivo MusclePlus</title>
@@ -16,50 +22,19 @@
             <?php include("./horizontalMenu.php"); ?>
 
             <section id="main">
-            	<article id="profile">
-                	<img src="./imagenes/bebe.png" title="Iconos diseñados por https://www.flaticon.es/autores/smashicons desde https://www.flaticon.es/ con licencia http://creativecommons.org/licenses/by/3.0/">
-                    <p>Jessica García</p>
-                </article>
-
-                <article id="profile">
-               		<img src="./imagenes/feliz.png" title="Iconos diseñados por https://www.flaticon.es/autores/smashicons desde https://www.flaticon.es/ con licencia http://creativecommons.org/licenses/by/3.0/">
-                    <p>Gabriel Sanchez</p>
-                </article>
-
-                <article id="profile">
-	                <img src="./imagenes/sonrisa.png" title="Iconos diseñados por https://www.flaticon.es/autores/smashicons desde https://www.flaticon.es/ con licencia http://creativecommons.org/licenses/by/3.0/">
-                    <p>Raul Perez</p>
-                </article>
-
-                <article id="profile">
-                	<img src="./imagenes/spa.png" title="Iconos diseñados por https://www.flaticon.es/autores/smashicons desde https://www.flaticon.es/ con licencia http://creativecommons.org/licenses/by/3.0/">
-                    <p>Victor Fernandez</p>
-                </article>
-
-                <article id="profile">
-                	<img src="./imagenes/bebe2.png" title="Iconos diseñados por https://www.flaticon.es/autores/smashicons desde https://www.flaticon.es/ con licencia http://creativecommons.org/licenses/by/3.0/">
-                    <p>Susana Valdivia</p>
-                </article>
-
-                <article id="profile">
-                	<img src="./imagenes/ejercer2.png" title="Iconos diseñados por https://www.flaticon.es/autores/smashicons desde https://www.flaticon.es/ con licencia http://creativecommons.org/licenses/by/3.0/">
-                    <p>Paco Hermida</p>
-                </article>
-
-                <article id="profile">
-                	<img src="./imagenes/futbolista.png" title="Iconos diseñados por https://www.flaticon.es/autores/smashicons desde https://www.flaticon.es/ con licencia http://creativecommons.org/licenses/by/3.0/">
-                    <p>Adrian Hurruchaga</p>
-                </article>
-
-                <article id="profile">
-                	<img src="./imagenes/silueta-de-persona-nadando.png" title="Iconos diseñados por https://www.flaticon.es/autores/smashicons desde https://www.flaticon.es/ con licencia http://creativecommons.org/licenses/by/3.0/">
-                    <p>Andrea González</p>
-                </article>
-
-                <article id="profile">
-					<img src="./imagenes/feliz.png" title="Iconos diseñados por https://www.flaticon.es/autores/smashicons desde https://www.flaticon.es/ con licencia http://creativecommons.org/licenses/by/3.0/">
-                    <p>Sara Martinez</p>
-                </article>
+              <?php
+              if( conectarBaseDatos($host, $usuario_bd, $clave_bd, $basedatos)){
+                if( $clients = getWorkersList() ){
+                  while( $persona = mysqli_fetch_array($clients) ){ ?>
+                    <article id="profile">
+                          <p>Nombre: <?php echo $persona['nombre']; ?></p>
+                          <p>Fecha Nacimiento: <?php echo $persona['nacimiento']; ?></p>
+                          <p>Ciudad: <?php echo $persona['ciudad']; ?></p>
+                          <p>Rol: <?php echo $persona['rol']; ?></p>
+                      </article>
+                  <?php }  //while( $persona = mysqli_fetch_array($clients) )
+                } // if( $clients = getClientsList() )
+              } ?><!-- if( conectarBaseDatos($host, $usuario_bd, $clave_bd, $basedatos)) -->
 			</section>
 			<?php include("./foot.php"); ?>
 </body>
