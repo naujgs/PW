@@ -27,7 +27,7 @@
 				//alert('user insertado');
 				?>
 				<!-- REDIRECCIONADO -->
-   				<script type="text/javascript">setTimeout("location.href='../foroHilo.php?hilo=<?php echo $padre?>'", 1000);</script>
+   				<script type="text/javascript">setTimeout("location.href='../foroHilo.php?hilo=<?php echo $padre?>'", 000);</script>
 				<?php
 
 			}else{//	fin if(insertar datos) 29|54
