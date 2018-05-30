@@ -2,7 +2,7 @@
 
 /*	funcion para validar los datos del formulario de modificacion de datos de un usuario*/
 function validador_formulario_usuario(){
-	alert('dentro');
+//	alert('dentro');
 
 	/*obtengo los datos que deseo validar*/
 	dni = document.getElementById("dni").value;
