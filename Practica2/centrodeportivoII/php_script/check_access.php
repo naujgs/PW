@@ -25,7 +25,6 @@
 				}
 
 				//Si el logueo esta correcto, nos redireccionara a la misma web donde estamos.
-
 				header("Location: ".$_SERVER['HTTP_REFERER']);
 			}else{
 				//si el usuario no existe, mostramos un error y redireccionamos

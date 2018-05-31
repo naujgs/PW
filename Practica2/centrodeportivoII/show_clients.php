@@ -1,5 +1,5 @@
 
-<?php include("./php_script/simple_include.php"); ?>
+<?php include("./php_script/complex_include.php"); ?>
 
 <!doctype html>
 <html>
@@ -34,7 +34,7 @@
                           <p>Periodo matricula:<?php echo $persona['periodo']; ?></p>
                           <p>¿Cómo nos conociste? <?php echo $persona['conociste']; ?></p>
                           <?php if( !empty($_SESSION) ){
-                            if( $_SESSION['rol'] == "admin" || $persona['dni'] == $_SESSION['dni']){ ?>
+                            if( $_SESSION['rol'] != "cliente" || $persona['dni'] == $_SESSION['dni']){ ?>
       											<a href="./php_script/borrar_persona.php?dni=<?php echo $persona['dni']; ?>"><img src="./imagenes/borrar.png"></a>
       										<?php }     //if( $_SESSION['rol'] == "admin" || $persona['dni'] == $_SESSION['dni'])
                         } // if( !empty($_SESSION) ) ?>
