@@ -231,7 +231,7 @@ function eliminarUser($dni){
 			el dni de un usuario
 			Tambien se eliminaran los hilos que ha creado.
 			Por ultimo eliminamos al usuario */
-			probando();
+
 
 	/*MODIFICACION DE DATOS EN LA TABLA*/
 	$consulta = "DELETE FROM usuario WHERE dni = '".$dni."'";
@@ -276,6 +276,20 @@ function listadoPostPadre(){
 	global $conex;
 //busco los elementos que no tengan un post padre. Ellos son padre
 	$consulta = "SELECT * FROM foro where id_padre is null";
+
+	//Si falla la conexcion con la tabla o los datos devueltos es 0, ERROR
+	if( !$datos = mysqli_query($conex, $consulta) or mysqli_num_rows($datos) < 1 ){
+		return false;
+	} else {
+		//Si todo correcto devuelve datos.
+		return $datos;
+	}
+}
+
+function listThreadForUser($dni){
+	global $conex;
+//busco los elementos que no tengan un post padre. Ellos son padre
+	$consulta = "SELECT id_post FROM foro where id_autor = '".$dni."' AND id_padre is null";
 
 	//Si falla la conexcion con la tabla o los datos devueltos es 0, ERROR
 	if( !$datos = mysqli_query($conex, $consulta) or mysqli_num_rows($datos) < 1 ){

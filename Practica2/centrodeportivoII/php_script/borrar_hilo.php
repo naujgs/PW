@@ -35,7 +35,7 @@
 				?>
     			<center>
 					<p>ERROR!!</p>
-					<p>El post no pudo crearse</p>
+					<p>El post no pudo borrarse</p>
 					<p>Contacte con el administrador del sistema</p>
    					<img width="150px" src="../imagenes/giphy.gif"/>
     			</center>

@@ -2,7 +2,7 @@
 
 /*	funcion para validar los datos del formulario de modificacion de datos de un usuario*/
 function validador_formulario_usuario(){
-//	alert('dentro');
+
 
 	/*obtengo los datos que deseo validar*/
 	dni = document.getElementById("dni").value;
@@ -11,7 +11,7 @@ function validador_formulario_usuario(){
   direccion = document.getElementById("street").value;
   zip = document.getElementById("zip").value;
 	email = document.getElementById("email").value;
-	alert(nombre);
+
 	/*compruebo que obtengo bien los datos*/
 
 	var error = true;

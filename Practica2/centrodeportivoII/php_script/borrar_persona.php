@@ -13,36 +13,41 @@
 		//alert("Todos campos");
 		//compruebo si se realiza la conexion con la base de datos
 		if( conectarBaseDatos($host, $usuario_bd, $clave_bd, $basedatos) ){
-//			alert('conexion');
+
 			//Obtenemos datos pasados por el formulario de acceso
 			$id = $_GET['dni'];
-			//alert('No DNI');
-			//	El DNI introducido no esta en la base de datos
-      //padre NULL porque el es padre. Hijo NULL, porque todavia no tiene
-			if( eliminarUser($id) ){
-				//alert('user insertado');
-				?>
-        <?php $page = $_SERVER['HTTP_REFERER']; ?>
-      <!-- REDIRECCIONADO -->
-      <script type="text/javascript">setTimeout("location.href='<?php echo $page ?>'", 2000);</script>
-				<?php
-
-			}else{//	fin if(insertar datos) 29|54
-				//alert('user NO insertado');
-				?>
-    			<center>
-						<?php echo $id; ?>
-					<p>ERROR!!</p>
-					<p>No se pudo eliminar a la persona de la base de datos</p>
-					<p>Contacte con el administrador del sistema</p>
-   					<img width="150px" src="../imagenes/giphy.gif"/>
-    			</center>
-          <?php $page = $_SERVER['HTTP_REFERER']; ?>
-				<!-- REDIRECCIONADO -->
-				<script type="text/javascript">setTimeout("location.href='<?php echo $page ?>'", 2000);</script>
-    			<?php
-			}	//fin else if(insertar datos) 39
-
+			$continuar = true;
+			/*$continuar = false;
+			//Busco todos los hilos que ha creado el usuario a eliminar y los borro
+			if($hilos = listThreadForUser($id) ){
+				while ($threads = mysqli_fetch_array($hilos) ) {
+					if( eliminarAllForoThread($threads) ){
+						$continuar = true;
+					}
+				}
+			}*/
+			//A continuacion, borro al usuario
+			if($continuar){
+				if( eliminarUser($id) ){
+					//elimino los hilos que he dejado sin autor
+					$page = $_SERVER['HTTP_REFERER']; ?>
+					<!-- REDIRECCIONADO -->
+					<script type="text/javascript">setTimeout("location.href='<?php echo $page ?>'", 2000);</script>
+					<?php
+				}else{//	fin if(eliminar usuario)
+					?>
+	    			<center>
+						<p>ERROR!!</p>
+						<p>No se pudo eliminar a la persona de la base de datos</p>
+						<p>Contacte con el administrador del sistema</p>
+	   					<img width="150px" src="../imagenes/giphy.gif"/>
+	    			</center>
+					<?php $page = $_SERVER['HTTP_REFERER']; ?>
+					<!-- REDIRECCIONADO -->
+					<script type="text/javascript">setTimeout("location.href='<?php echo $page ?>'", 2000);</script>
+	    			<?php
+				}	//	fin if(eliminar usuario)
+			}
 			//Cerramos conexion con BD
 			closeConexion($conex);
 		}else{	//fin comprobar conexion base datos
