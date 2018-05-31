@@ -48,6 +48,10 @@
         <article id="hiloMensaje">
         	<h4><?php echo $hilo['titulo']; ?></h4>
           <p><?php echo $hilo['mensaje']; ?></p>
+					<!-- Si eres administrador o el autor del post-->
+					<?php if( $_SESSION['rol'] == "admin" || $owner['dni'] == $_SESSION['dni']){ ?>
+						<a href="./php_script/borrar_hilo.php?id=<?php echo $hilo['id_post']?>&padre=<?php echo $hilo['id_padre'] ?>"><img src="./imagenes/borrar.png"></a>
+					<?php } ?>
         </article>
       </article>
 

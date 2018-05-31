@@ -13,33 +13,34 @@
 		//alert("Todos campos");
 		//compruebo si se realiza la conexion con la base de datos
 		if( conectarBaseDatos($host, $usuario_bd, $clave_bd, $basedatos) ){
-//			alert('conexion');
+
 			//Obtenemos datos pasados por el formulario de acceso
-			$id = $_GET['dni'];
-			//alert('No DNI');
-			//	El DNI introducido no esta en la base de datos
-      //padre NULL porque el es padre. Hijo NULL, porque todavia no tiene
-			if( eliminarUser($id) ){
-				//alert('user insertado');
+			$post = $_GET['id'];
+      $padre = $_GET['padre'];
+
+			if( eliminarAllForoThread($post) ){
 				?>
-        <?php $page = $_SERVER['HTTP_REFERER']; ?>
-      <!-- REDIRECCIONADO -->
-      <script type="text/javascript">setTimeout("location.href='<?php echo $page ?>'", 2000);</script>
+        <center>
+        <p>All right!!</p>
+        <p>Hilo borrado con exito</p>
+        <p>En breve se le redireccionara</p>
+          <img width="150px" src="../imagenes/giphy.gif"/>
+        </center>
+				<!-- REDIRECCIONADO -->
+   				<script type="text/javascript">setTimeout("location.href='../foro.php'", 3000);</script>
 				<?php
 
 			}else{//	fin if(insertar datos) 29|54
 				//alert('user NO insertado');
 				?>
     			<center>
-						<?php echo $id; ?>
 					<p>ERROR!!</p>
-					<p>No se pudo eliminar a la persona de la base de datos</p>
+					<p>El post no pudo crearse</p>
 					<p>Contacte con el administrador del sistema</p>
    					<img width="150px" src="../imagenes/giphy.gif"/>
     			</center>
-          <?php $page = $_SERVER['HTTP_REFERER']; ?>
 				<!-- REDIRECCIONADO -->
-				<script type="text/javascript">setTimeout("location.href='<?php echo $page ?>'", 2000);</script>
+				<script type="text/javascript">setTimeout("location.href='../foroHilo.php?hilo=<?php echo $padre?>'", 2000);</script>
     			<?php
 			}	//fin else if(insertar datos) 39
 

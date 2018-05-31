@@ -199,12 +199,43 @@ function editUser($usuario, $dni, $psw, $nombre, $nacimiento, $calle, $ciudad, $
 	}
 }
 
+/*	funcion a la que le pasaremos el id de un post padre y se borrara este y
+		todos sus hijos
+*/
+function eliminarAllForoThread($id){
+	global $conex;
+	//Primero borro todos sus hijos y luego al padre
+
+	$consulta = "DELETE FROM foro WHERE id_padre = '".$id."'";
+	if( !mysqli_query($conex, $consulta) ) {
+
+			return false;
+		} else {
+
+			//ahora borro al padre
+			$consulta = "DELETE FROM foro WHERE id_post = '".$id."'";
+			if( !mysqli_query($conex, $consulta) ) {
+				return false;
+			}else{
+			return true;
+		}
+	}
+
+}
+
 /*Funcion para eliminar un usuario de la BD */
 function eliminarUser($dni){
 	global $conex;
 
+	/*	Primero debemos eliminar todos sus post del foro, ya que tiene como clave externa
+			el dni de un usuario
+			Tambien se eliminaran los hilos que ha creado.
+			Por ultimo eliminamos al usuario */
+			probando();
+
 	/*MODIFICACION DE DATOS EN LA TABLA*/
 	$consulta = "DELETE FROM usuario WHERE dni = '".$dni."'";
+	echo $consulta;
 
 	if( !mysqli_query($conex, $consulta) ) {
 		return false;
@@ -234,9 +265,9 @@ function comprobarDNI($Dni){
 
 	//Si falla la conexion con la tabla o los datos devueltos es 1 o mas(no se deberia dar el caso), ERROR
 	if( !$datos = mysqli_query($conex, $consulta) or mysqli_num_rows($datos) >= 1 ){
-		return false;
-	} else {
 		return true;
+	} else {
+		return false;
 	}
 }
 

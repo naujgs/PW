@@ -27,7 +27,8 @@
                           <p>Fecha Nacimiento: <?php echo $persona['nacimiento']; ?></p>
                           <p>Ciudad: <?php echo $persona['ciudad']; ?></p>
                           <p>Rol: <?php echo $persona['rol']; ?></p>
-                          <?php if( !empty($_SESSION) ){
+                          <?php
+                          if( !empty($_SESSION) ){
                             if( $_SESSION['rol'] == "admin" || $persona['dni'] == $_SESSION['dni']){ ?>
       											<a href="./php_script/borrar_persona.php?dni=<?php echo $persona['dni']; ?>"><img src="./imagenes/borrar.png"></a>
       										<?php }     //if( $_SESSION['rol'] == "admin" || $persona['dni'] == $_SESSION['dni'])
